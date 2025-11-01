@@ -10,10 +10,10 @@ class TestLogo:
         main_page = MainPage(driver)
         main_page.button_order_click(button="top")
         main_page.click_logo_scooter()
-        assert driver.current_url == main_site
+        assert main_page.get_current_url() == main_site
 
     @allure.title("Тестирование клика на логотип Яндекс")
     def test_logo_yandex(self, driver):
         main_page = MainPage(driver)
         main_page.click_logo_yandex()
-        assert driver.current_url == yandex_dzen
+        assert main_page.get_current_url() == yandex_dzen

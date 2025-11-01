@@ -62,3 +62,7 @@ class BasePage:
     @allure.step("Ожидание загрузки страницы Дзена")
     def wait_dzen(self):
         WebDriverWait(self.driver, self.timeout).until(EC.url_to_be(yandex_dzen))
+
+    @allure.step("Получить текущий URL")
+    def get_current_url(self):
+        return self.driver.current_url

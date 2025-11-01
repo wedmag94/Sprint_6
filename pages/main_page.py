@@ -5,6 +5,9 @@ from locators.main_page_locators import MainPageLocators
 
 
 class MainPage(BasePage):
+    @allure.step("Принять куки")
+    def accept_cookies(self):
+        self.click_to_element(MainPageLocators.COOKIES_BUTTON_LOCATOR)
 
     @allure.step("Дождаться видимости секции Вопросы о важном")
     def wait_for_element_faq(self):
